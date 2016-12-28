@@ -1,0 +1,240 @@
+/**
+ * Created by fq018 on 2016/10/27.
+ */
+
+var data=[
+    {one:"一个想法",two:"@ The head of Da Xing",three:"出 「让我们分享未来梦想」 的想法。我们已经浪费了太多时间关注琐碎的事情。但是我们可以随时选择自己的人生：创造全新的事物。"},
+    {one:"一个会议",two:"@ Fenglin Campus, Fudan",three:"首次技术启动会议，但是两个技术人员直接消失。这不重要。重要的是，十年后，那次会议现场的所有人会变成什么样？"},
+    {one:"找到基地",two:"@ Jiafa Mansion, Shanghai",three:"杀不死我的只能使我更强，在一个新地方继续原先的旅程。多少个梦想才能击败现实？我们叫它基地。"},
+    {one:"你所看到的开始",two:"@ Jiafa Mansion, Shanghai",three:"10years.me网站正式上线。你所使用的域名第一次激活，你所看到的历史开始上演。"},
+    {one:"进入Innospace",two:"@ KIC, Shanghai",three:"拿到了第一笔投资，团队搬进了上海最优秀的孵化器之一。遇到了更多更有趣的人，开始潜心优化产品。"},
+    {one:"梦想的移动化",two:"@ Yangpu, Shanghai",three:"IOS版本正式上线，让人们可以更好地记录追梦历程。"},
+    {one:"今天: 未来正在发生",two:"@ 你的眼前",three:"未来，每时每刻都在发生。今天，加入十年后，和我们一起，创造属于自己的未来。"},
+    {one:"创建属于你的梦想",two:"@ 十年后",three:"点击时间轴上的图标即可添加梦想。只需填入该梦想的名称，预期的实现时间，以及对该梦想的描述，就可成功创建。"},
+    {one:"记录追梦历程",two:"@ 十年后",three:"你可以基于每个梦想随时记录实时的追梦历程，以及你关于梦想瞬间的想法。我们不希望你在这里仅仅是许愿，而是真正地把自己的梦想映射到今日的生活。"},
+    {one:"与有趣的追梦者互动",two:"@ 十年后",three:"你也可以在十年后关注任何有想法、有趣的人。你可以在发现页面看到的各种有趣的追梦故事，也可以来自你主动的主题搜索。"}
+];
+var data1=[
+    {left:client().width/2,top:66},
+    {left:client().width/2+58,top:116},
+    {left:client().width/2+152,top:18},
+    {left:client().width/2+184,top:63},
+    {left:client().width/2+279,top:116},
+    {left:client().width/2+436,top:18},
+    {left:client().width/2+974,top:66},
+    {left:client().width/2+1120,top:116},
+    {left:client().width/2+1290,top:18},
+    {left:client().width/2+1499,top:66}
+];
+var data2=[0,58,152,184,279,436,974,1120,1290,1499];
+var data3=[
+    {one:"2013",two:"Mar&nbsp;&nbsp;&nbsp;&nbsp;13"},
+    {one:"2013",two:"May&nbsp;&nbsp;&nbsp;&nbsp;18"},
+    {one:"2013",two:"Sep&nbsp;&nbsp;&nbsp;&nbsp;24"},
+    {one:"2013",two:"Nov&nbsp;&nbsp;&nbsp;&nbsp;07"},
+    {one:"2014",two:"Mar&nbsp;&nbsp;&nbsp;&nbsp;15"},
+    {one:"2014",two:"Oct&nbsp;&nbsp;&nbsp;&nbsp;17"},
+    {one:"2016",two:"Oct&nbsp;&nbsp;&nbsp;&nbsp;25"},
+    {one:"2017",two:"May&nbsp;&nbsp;&nbsp;&nbsp;13"},
+    {one:"2017",two:"Nov&nbsp;&nbsp;&nbsp;&nbsp;29"},
+    {one:"2018",two:"Sep&nbsp;&nbsp;&nbsp;&nbsp;25"}
+];
+var time=document.getElementById("time");
+var all=document.getElementById("all");
+var timer=document.getElementById("timer");
+var timerT=document.getElementById("timerT");
+var line=document.getElementById("line");
+
+//设置与可视窗口相关的尺寸
+//time.style.height=client().height+"px";
+line.style.left=client().width/2+"px";
+all.style.height=client().height-220+"px";
+
+//遍历生成相关结构
+for(var i=0;i<data.length;i++){
+
+    //生成轮播图每个div
+    var ps=document.createElement("div");
+    ps.style.height=client().height-220+"px";
+    ps.style.width=client().width+"px";
+    ps.className="ps";
+    ps.innerHTML='<div class="pic">'
+        +'<div class="tm">'
+        +'<p class="p1">'+data3[i].one+'</p>'
+        +'<p class="p2">'+data3[i].two+'</p>'
+        +'</div>'
+        +'<div class="text">'
+        +'<p class="one">'+data[i].one+'</p>'
+        +'<p class="two">'+data[i].two+'</p>'
+        +'<p class="three">'+data[i].three+'</p>'
+        +'</div>';
+    all.appendChild(ps);
+
+    //生成时间线
+    var timeline =document.createElement("div");
+    timeline.className="timeline";
+    timeline.style.left=data1[i].left+"px";
+    timerT.appendChild(timeline);
+
+    //生成txt
+    var txt=document.createElement("div");
+    txt.className="txt";
+    txt.index=i;
+    txt.style.top=data1[i].top+"px";
+    txt.innerHTML=data[i].one;
+
+    //给txt设置不同的背景图片
+    if(i<=5){
+        txt.style.background="url(timeStory/images/dream_success.png) no-repeat left/150px 45px ";
+    }else{
+        txt.style.background="url(timeStory/images/dream_process.png) no-repeat left/150px 45px ";
+    }
+    timeline.appendChild(txt);
+}
+var left=document.getElementById("left");
+var right=document.getElementById("right");
+var txts=document.getElementsByClassName("txt");
+
+//设置轮播图和时间轴默认位置和txt高亮显示
+var index=6;
+all.style.left=-index*client().width+"px";
+timer.style.left=-data2[index]+"px";
+txts[index].style.background="url(../images/dream_process_hover.png) no-repeat left/150px 45px ";
+
+//左右焦点点击，移动轮播图和事件的位置，轮播图移动距离相等，时间轴移动距离在数组中获取（通过index获取对应的数值）
+left.onclick=function(){
+    if(index>0){
+        index--;
+        animate(all,{left:-index*client().width});
+        animate(timer,{left:-data2[index]});
+        for(var i=0;i<txts.length;i++){
+            if(i<=5){
+                txts[i].style.background="url(timeStory/images/dream_success.png) no-repeat left/150px 45px ";
+            }else{
+                txts[i].style.background="url(timeStory/images/dream_process.png) no-repeat left/150px 45px ";
+            }
+        }
+        if(index>5){
+            txts[index].style.background="url(timeStory/images/dream_process_hover.png) no-repeat left/150px 45px ";
+        }else{
+            txts[index].style.background="url(timeStory/images/dream_success_hover.png) no-repeat left/150px 45px ";
+        }
+
+        if(index==0){
+            left.children[0].style.display="none";
+        }else{
+            left.children[0].style.display="block";
+        }
+        right.children[0].style.display="block";
+    }
+}
+right.onclick=function(){
+    if(index<data.length-1){
+        index++;
+        animate(all,{left:-index*client().width});
+        animate(timer,{left:-data2[index]});
+        for(var i=0;i<txts.length;i++){
+            if(i<=5){
+                txts[i].style.background="url(timeStory/images/dream_success.png) no-repeat left/150px 45px ";
+            }else{
+                txts[i].style.background="url(timeStory/images/dream_process.png) no-repeat left/150px 45px ";
+            }
+        }
+        if(index>5){
+            txts[index].style.background="url(timeStory/images/dream_process_hover.png) no-repeat left/150px 45px ";
+        }else{
+            txts[index].style.background="url(timeStory/images/dream_success_hover.png) no-repeat left/150px 45px ";
+        }
+        if(index==data.length-1){
+            right.children[0].style.display="none";
+        }else{
+            right.children[0].style.display="block";
+        }
+        left.children[0].style.display="block";
+    }
+}
+
+//遍历注册txt点击和鼠标移动的事件
+for(var i=0;i<txts.length;i++){
+    txts[i].onclick=function(){
+        animate(all,{left:-this.index*client().width});
+        animate(timer,{left:-data2[this.index]});
+        index=this.index;
+        for(var i=0;i<txts.length;i++){
+            if(i<=5){
+                txts[i].style.background="url(timeStory/images/dream_success.png) no-repeat left/150px 45px ";
+            }else{
+                txts[i].style.background="url(timeStory/images/dream_process.png) no-repeat left/150px 45px ";
+            }
+        }
+        if(index>5){
+            txts[index].style.background="url(timeStory/images/dream_process_hover.png) no-repeat left/150px 45px ";
+        }else{
+            txts[index].style.background="url(timeStory/images/dream_success_hover.png) no-repeat left/150px 45px ";
+        }
+        left.children[0].style.display="b";
+        if(this.index==0){
+            left.children[0].style.display="none";
+        }else if(this.index==txts.length-1){
+            right.children[0].style.display="none";
+        }else{
+            left.children[0].style.display="block";
+            right.children[0].style.display="block";
+        }
+
+    }
+    txts[i].onmouseover=function(){
+        if(this.index!=index){
+            if(this.index<=5){
+                this.style.background="url(timeStory/images/dream_success_hover.png) no-repeat left/150px 45px ";
+            }else{
+                this.style.background="url(timeStory/images/dream_process_hover.png) no-repeat left/150px 45px ";
+            }
+        }
+    }
+    txts[i].onmouseout=function(){
+        if(this.index!=index){
+            if(this.index<=5){
+                this.style.background="url(timeStory/images/dream_success.png) no-repeat left/150px 45px ";
+            }else{
+                this.style.background="url(timeStory/images/dream_process.png) no-repeat left/150px 45px ";
+            }
+        }
+    }
+
+}
+
+//给左右焦点注册鼠标经过事件
+left.addEventListener("mouseenter",function(){
+    animate(left.children[0],{left:30});
+},false);
+left.addEventListener("mouseleave",function(){
+    animate(left.children[0],{left:60});
+},false);
+right.addEventListener("mouseenter",function(){
+    animate(right.children[0],{left:30});
+},false);
+right.addEventListener("mouseleave",function(){
+    animate(right.children[0],{left:0});
+},false);
+
+//生成月份刻度和年份刻度
+var timerB =document.getElementById("timerB");
+timerB.style.position="relative";
+//月份
+for(var i=0;i<=1000;i++){
+    var div=document.createElement("div");
+    div.className="month";
+    timerB.appendChild(div);
+}
+//年度
+for(var i=0;i<8;i++){
+    var dv=document.createElement("div");
+    dv.className="year";
+    dv.style.left=client().width/2-50+276*i+"px";
+    timerB.appendChild(dv);
+    var span=document.createElement("span");
+    span.innerHTML=2013+i;
+    dv.appendChild(span);
+
+}

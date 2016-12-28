@@ -1,0 +1,289 @@
+/*logo开始*/
+body{
+    background-image: url(../index-images/login_bg.jpg);
+    -webkit-background-size:cover;
+    background-size:cover;
+    opacity: 0;
+}
+
+.logo {
+    /*background-color: #ccc;*/
+    padding-left: 65px;
+}
+
+.logo a {
+    height: 50px;
+    width: 200px;
+    display: block;
+    background: url(../index-images/logo_login.png) no-repeat;
+    background-size: 200px 50px;
+    text-indent: -9999px;
+}
+
+/*logo结束*/
+
+/*<!--首页导航开始-->*/
+
+#navS {
+    height: 604px;
+    width: 1204px;
+    margin: 2px auto 0px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    /*background-image:url(../find-images/6.jpg);*/
+    /*-webkit-background-size:cover;*/
+    /*background-size:cover;*/
+    /*opacity: 1;*/
+}
+
+/*<!--背景盒子左-->*/
+/*#navS .bgcboxL {*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+    /*position: absolute;*/
+    /*left: 0px;*/
+    /*top: 0px;*/
+    /*background-image: url(../find-images/6.jpg);*/
+    /*-webkit-background-size:cover;*/
+    /*background-size:cover;*/
+    /*!*background: -webkit-gradient(linear, 0 0, 100% 0, from(#fec454), to(#3bb1dd));*!*/
+    /*z-index: -1;*/
+    /*opacity: 0;*/
+/*}*/
+
+/*<!--背景盒子右-->*/
+
+#navS .bgcboxR {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    /*background: -webkit-gradient(linear, 0 0, 100% 0, from(#3bb1dd), to(#fec454));*/
+    background-image: url(../index-images/login_bg.jpg);
+    -webkit-background-size:cover;
+    background-size:cover;
+    z-index: -1;
+    opacity:0;
+}
+
+#navS .xbox {
+    z-index: 1;
+}
+
+#navS .xbox div {
+    /*height: 600px;*/
+    width: 1px;
+    background-color: #fff;
+}
+
+#navS .xbox .xline1 {
+    position: absolute;
+    left: 400px;
+}
+
+#navS .xbox .xline2 {
+    position: absolute;
+    left: 802px;
+}
+
+#navS .ybox {
+    z-index: 1;
+}
+
+#navS .ybox div {
+    height: 1px;
+    /*width: 1200px;*/
+    background-color: #fff;
+}
+
+#navS .ybox .yline1 {
+    position: absolute;
+    top: 200px;
+}
+
+#navS .ybox .yline2 {
+    position: absolute;
+    top: 402px;
+}
+
+/*小图片盒子开始*/
+#navS .imgbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 610px;
+    width: 1210px;
+    overflow: hidden;
+    z-index: 99;
+}
+
+#navS .imgbox .public {
+    width: 400px;
+    height: 200px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    float: left;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    /*display: none;*/
+    opacity:0;
+    background: url("../index-images/shouye.jpg") no-repeat;
+    background-size:cover;
+    z-index: 99;
+}
+
+#navS .imgbox .public .public-box {
+    width: 400px;
+    height: 200px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#navS .imgbox .public .public-box .screen {
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    top: 0;
+    left: 0;
+    background-color:black;
+    opacity: 0.6;
+
+}
+
+#navS .imgbox .public .public-box a {
+    display: block;
+    width: 400px;
+    height: 200px;
+    position: absolute;
+
+}
+
+#navS .imgbox .a1 {
+    background: url("../index-images/1.jpg") no-repeat;
+    background-size: 400px 200px;
+}
+
+#navS .imgbox .a2 {
+    background: url("../index-images/2.jpg") no-repeat;
+    background-size: 400px 200px;
+}
+
+#navS .imgbox .a3 {
+    background: url("../index-images/3.jpg") no-repeat;
+    background-size: 400px 200px;
+}
+
+#navS .imgbox .a4 {
+    background: url("../index-images/4.jpg") no-repeat;
+    background-size: 400px 200px;
+}
+
+#navS .imgbox .a5 {
+    background: url("../index-images/5.jpg") no-repeat;
+    background-size: 400px 200px;
+}
+
+#navS .imgbox .a6 {
+    background: url("../index-images/6.jpg") no-repeat;
+    background-size: 400px 200px;
+}
+
+#navS .imgbox .a7 {
+    background: url("../index-images/7.jpg") no-repeat;
+    background-size: 400px 200px;
+}
+
+#navS .imgbox .a8 {
+    background: url("../index-images/8.jpg") no-repeat;
+    background-size: 400px 200px;
+}
+
+#navS .imgbox .clear {
+    margin-right: 0;
+}
+
+#navS .imgbox .public .p1 {
+    font: 400 16px/20px "microsoft yahei";
+}
+
+#navS .imgbox .public .btm-box {
+    width: 400px;
+    position: absolute;
+    top: 200px;
+    left: 0;
+}
+
+#navS .imgbox .public .btm-box div {
+    height: 40px;
+    width: 199px;
+    color: #fff;
+}
+
+#navS .imgbox .public .btm-box .line {
+    width: 1px;
+    height: 20px;
+    background-color: #fff;
+    position: absolute;
+    left: 200px;
+    top: 10px;
+}
+
+#navS .imgbox .public .btm-box .btmleft {
+    float: left;
+}
+
+#navS .imgbox .public .btm-box .btmright {
+    float: right;
+}
+
+#navS .imgbox .public .public-box h2 {
+    font: 400 25px/50px "microsoft yahei";
+    /*color: #f0f0f0;*/
+    color: white;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    left: 50%;
+    margin-left: -25px;
+    z-index: 100;
+}
+
+/*<!--首页导航结束-->*/
+
+/*<!--版权开始-->*/
+.copyright {
+    height: 40px;
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    font: 400 16px/40px "宋体";
+    color: #666;
+}
+
+/*<!--版权结束-->*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
